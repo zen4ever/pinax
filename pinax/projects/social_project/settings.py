@@ -123,6 +123,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.humanize',
     'django.contrib.markup',
+    'django.contrib.comments',
     
     # external
     'notification', # must be first
@@ -228,6 +229,8 @@ BEHIND_PROXY = False
 FORCE_LOWERCASE_TAGS = True
 
 WIKI_REQUIRES_LOGIN = True
+
+COMMENTS_APP = 'threadedcomments'
 
 # Uncomment this line after signing up for a Yahoo Maps API key at the
 # following URL: https://developer.yahoo.com/wsregapp/

@@ -30,6 +30,8 @@ urlpatterns = patterns('',
     (r'^notices/', include('notification.urls')),
     (r'^announcements/', include('announcements.urls')),
     
+    (r'^xd-receiver/', direct_to_template, {"template": "facebook_connect/xd_receiver.html"}),
+    
     (r'^admin/(.*)', admin.site.root),
 )
 

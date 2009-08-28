@@ -2,6 +2,8 @@
 <head></head>
 <body>
 
+{{ request.COOKIES }}
+
 {# @@@ append locale for other languages, e.g. http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/es_LA #}
 <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
 
@@ -11,6 +13,8 @@
     {# @@@ pull API key from settings? #}
     FB.init("{{ FACEBOOK_API_KEY }}", "{% url facebook-xd-receiver %}");
 </script>
+
+<a id="logout" href="/test/" onclick='FB.Connect.ifUserConnected(null,function() { window.location = "/test/" }); FB.Connect.logoutAndRedirect("/test/"); return false;'>Sign out</a>
 
 </body>
 </html>

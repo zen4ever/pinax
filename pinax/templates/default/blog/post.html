@@ -6,6 +6,7 @@
 {% load tagging_tags %}
 {% load blog_tags %}
 {% load theme_tags %}
+{% load markup_tags %}
 
 {% block head_title %}{% blocktrans %}Blog Post{% endblocktrans %} : {{ post.title }}{% endblock %}
 
@@ -30,7 +31,7 @@
             {% endifequal %}
         </div>
         
-        {% show_blog_post post %}
+        {{ post.body|apply_markup:post.markup }}
         
     </div>
     

@@ -94,17 +94,7 @@
                             {% if previous_invitations_to %}
                                 <p>{% trans "Friendship request sent." %}</p>
                             {% else %}
-                                <h2>{% trans "Add As Friend" %}</h2>
-                                <form class="uniForm" method="POST" action="">
-                                    <fieldset class="inlineLabels">
-                                        {{ invite_form|as_uni_form }}
-                                        <div class="form_block">
-                                            <input type="hidden" name="action" value="invite" />
-                                            <input type="submit" value="{% trans "invite" %}"/>
-                                            {% blocktrans %}{{ other_user }} to be a friend.{%  endblocktrans %}
-                                        </div>
-                                    </fieldset>
-                                </form>
+                                <p><a href="{% url profile_invite_as_friend other_user %}" rel="facebox">{% trans "Add As Friend" %}</a></p>
                             {% endif %} {# previous_invitations_to #}
                         {% endif %} {# previous_invitations_from #}
                     {% endif %} {# is_friend #}

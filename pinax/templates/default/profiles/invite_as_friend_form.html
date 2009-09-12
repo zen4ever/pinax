@@ -1,0 +1,11 @@
+{% load uni_form %}
+
+<form class="uniForm" method="POST" action="{% url profile_invite_as_friend other_user %}">
+    <fieldset>
+        {{ invite_form|as_uni_form }}
+        <div class="form_block">
+            <input type="submit" value="invite" />
+            or <a href="{% url profile_detail other_user %}">cancel</a>
+        </div>
+    </fieldset>
+</form>

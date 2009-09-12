@@ -1,0 +1,13 @@
+{% extends "profiles/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Add As Friend" %}{% endblock %}
+
+{% block body %}
+    
+    <h1>{% trans "Add As Friend" %}</h1>
+    
+    {% include "profiles/invite_as_friend_form.html" %}
+    
+{% endblock %}

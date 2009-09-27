@@ -41,30 +41,29 @@
     </form>
     
     <p>{% trans "Or sign in with your OpenID" %}:</p>
-    {# @@@ why isn't this just does as a form object ? #}
     <!-- Simple OpenID Selector -->
     <form action="/openid/register/" method="POST" id="openid_form">
 
     <fieldset>
-            <legend>Sign-in or Create New Account</legend>
+            <legend>{% trans "Sign-in or Create New Account" %}</legend>
             
             <div id="openid_choice">
-                <p>Please click your account provider:</p>
+                <p>{% trans "Please click your account provider:" %}</p>
                 <div id="openid_btns"></div>
             </div>
             
             <div id="openid_input_area">
                 {% if url_required %}
                 <ul class="errorlist">
-                    <li>This field is required.</li>
+                    <li>{% trans "This field is required." %}</li>
                 </ul>
                 {% endif %}
                 <input id="openid_url" name="openid_url" type="text" />
-                <input id="openid_submit" type="submit" value="Sign-In"/>
+                <input id="openid_submit" type="submit" value="{% trans "Log in &raquo;" %}"/>
             </div>
             <noscript>
-            <p>OpenID is service that allows you to log-on to many different websites using a single indentity.
-            Find out <a href="http://openid.net/what/">more about OpenID</a> and <a href="http://openid.net/get/">how to get an OpenID enabled account</a>.</p>
+            <p>{% blocktrans %}OpenID is service that allows you to log-on to many different websites using a single indentity.
+            Find out <a href="http://openid.net/what/">more about OpenID</a> and <a href="http://openid.net/get/">how to get an OpenID enabled account</a>.{% endblocktrans %}</p>
             </noscript>
 
     </fieldset>
